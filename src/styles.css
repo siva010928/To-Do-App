@@ -6,3 +6,6 @@
   text-align: center;
 }
 
+.taskItem:hover {
+  cursor: pointer;
+}

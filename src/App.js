@@ -5,10 +5,24 @@ import { useState } from "react";
 
 export default function App() {
 
-  const [tasks, setTasks] =  useState(["Read SpringBoot", "Complete assignments", "Prepare breakfast", "Sleep for 2 hours", "Take a shower"])
+  const [tasks, setTasks] =  useState(
+    [
+      {task: "Read SpringBoot", isDone: false}, 
+      {task: "Take a shower", isDone: false}, 
+      {task: "Prepare breakfast", isDone: false}, 
+      {task: "Sleep for 2 hours", isDone: false}, 
+      {task: "Take a shower", isDone: false}, 
+    ])
+
+  function handleTaskClick(index) {
+    console.log(index);
+    tasks[index].isDone = ! tasks[index].isDone;
+    setTasks([...tasks]);
+  }
   
   function emptyTasks() {
-      setTasks([]);
+    let undoneTasks = tasks.filter((task) => task.isDone === false)
+    setTasks(undoneTasks);
   }
 
   return (
@@ -17,12 +31,12 @@ export default function App() {
       <hr />
       {
         (tasks && tasks.length !== 0)  ?
-        (tasks.map((task, index) => (<ToDoItem  key={index} task={task} index={index + 1} />)))
+        (tasks.map((task, index) => (<ToDoItem  key={index} taskItem={task} index={index} handleClick={handleTaskClick}/>)))
         : 
         <h4><i>Nothing to do buddy. Sleep!!</i></h4>
       }
       <hr />
-      <button onClick={emptyTasks}>Empty</button>
+      <button onClick={emptyTasks}>Remove Completed Tasks</button>
     </div>
   );
 }
