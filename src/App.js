@@ -2,22 +2,21 @@ import "./styles.css";
 import Header from "./Header/Header";
 import ToDoItem from "./ToDoList/ToDoItem";
 import { useState } from "react";
+import TaskForm from "./TaskForm/TaskForm";
 
 export default function App() {
 
-  const [tasks, setTasks] =  useState(
-    [
-      {task: "Read SpringBoot", isDone: false}, 
-      {task: "Take a shower", isDone: false}, 
-      {task: "Prepare breakfast", isDone: false}, 
-      {task: "Sleep for 2 hours", isDone: false}, 
-      {task: "Take a shower", isDone: false}, 
-    ])
+  const [tasks, setTasks] =  useState([])
 
   function handleTaskClick(index) {
-    console.log(index);
-    tasks[index].isDone = ! tasks[index].isDone;
+    const clickedTask = tasks[index];
+    const updatedTask = {...clickedTask, isDone: ! clickedTask.isDone}
+    tasks[index] = updatedTask
     setTasks([...tasks]);
+  }
+
+  function addTask(newTask) {
+    setTasks([...tasks, {task: newTask, isDone: false}])
   }
   
   function emptyTasks() {
@@ -37,6 +36,10 @@ export default function App() {
       }
       <hr />
       <button onClick={emptyTasks}>Remove Completed Tasks</button>
+      <br />
+      <br />
+      <br />
+      <TaskForm addTask={addTask}/>
     </div>
   );
 }
