@@ -1,11 +1,15 @@
 import "./styles.css";
 import Header from "./Header/Header";
 import ToDoItem from "./ToDoList/ToDoItem";
+import { useState } from "react";
 
 export default function App() {
 
-  const tasks =  ["Read SpringBoot", "Complete assignments", "Prepare breakfast", "Sleep for 2 hours", "Take a shower"]
-  // const tasks = []
+  const [tasks, setTasks] =  useState(["Read SpringBoot", "Complete assignments", "Prepare breakfast", "Sleep for 2 hours", "Take a shower"])
+  
+  function emptyTasks() {
+      setTasks([]);
+  }
 
   return (
     <div className="App">
@@ -15,8 +19,10 @@ export default function App() {
         (tasks && tasks.length !== 0)  ?
         (tasks.map((task, index) => (<ToDoItem  key={index} task={task} index={index + 1} />)))
         : 
-        <h4>Nothing to do buddy. Sleep!!</h4>
+        <h4><i>Nothing to do buddy. Sleep!!</i></h4>
       }
+      <hr />
+      <button onClick={emptyTasks}>Empty</button>
     </div>
   );
 }
