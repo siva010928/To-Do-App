@@ -1,4 +1,12 @@
-.Application {
+.App {
   font-family: sans-serif;
+}
+
+.Header {
   text-align: center;
 }
+
+.ToDoList {
+  text-align: left;
+}
+
