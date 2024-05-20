@@ -4,7 +4,7 @@ const ToDoItem = ({taskItem, index, handleClick}) => {
     const {task, isDone} = taskItem;
 
     return (
-        <div className="taskItem" onClick={() => {handleClick(index)}} id={index}>
+        <div className="taskItem" onClick={handleClick} id={index}>
             {
                 isDone === false ? 
                 (<h4>{`${index + 1}.   ${task}`}</h4>):
