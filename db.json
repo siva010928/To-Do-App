@@ -1,18 +1,54 @@
 {
   "tasks": [
     {
-      "id": "7d40",
-      "task": "Sleep",
+      "id": "7857",
+      "task": "Practice music",
       "isDone": false
     },
     {
-      "id": "2dbd",
-      "task": "Check Cricket Scorecard Pinning",
+      "id": "0a80",
+      "task": "Attend a class",
       "isDone": false
     },
     {
-      "id": "67d4",
-      "task": "Check Cricket Scorecard Pinning",
+      "id": "7f99",
+      "task": "Take out trash",
+      "isDone": false
+    },
+    {
+      "id": "61b1",
+      "task": "FINISH HOMEWORK",
+      "isDone": false
+    },
+    {
+      "id": "81db",
+      "task": "Hit her",
+      "isDone": false
+    },
+    {
+      "id": "8ea0",
+      "task": "Finish Axios tutorial",
+      "isDone": false,
+      "priority": "High"
+    },
+    {
+      "id": "5551",
+      "task": "Practice music",
+      "isDone": false
+    },
+    {
+      "id": "94b9",
+      "task": "Attend a class",
+      "isDone": false
+    },
+    {
+      "id": "ab96",
+      "task": "Get up",
+      "isDone": false
+    },
+    {
+      "id": "e85b",
+      "task": "Do the homework",
       "isDone": false
     }
   ]
